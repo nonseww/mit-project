@@ -4,10 +4,14 @@ void hello() {
     std::cout << "Hello, World!\n";
 }
 
-unsigned long long fib(int n) {
-    if (n == 1) return 0; 
-    if (n == 2) return 1; 
-    return fib(n - 1) + fib(n - 2); 
+void fib(int n) {
+    unsigned long long first = 0, second = 1, x; 
+    for (int i = 0; i < n; ++i) {
+        std::cout << first << std::endl;
+        x = second; 
+        second += first; 
+        first = x; 
+    }
 }
 
 int main()
@@ -15,6 +19,6 @@ int main()
     hello(); 
     int n; 
     std::cin >> n; 
-    std::cout << fib(n); 
+    fib(n); 
     return 0; 
 }
